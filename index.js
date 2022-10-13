@@ -15,20 +15,6 @@ app.use(cors({origin: '*'}));
 
 app.use('/', router);
 
-// const connectDB = async () => {
-//   console.log(DB);
-//   try {
-//     await mongoose.connect(DB, {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     });
-//     console.log('Connected to database');
-//   } catch (error) {
-//     console.log('Error: ', error);
-//   }
-// };
-// connectDB();
-
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}/`);
   console.log('Press CTRL + C to stop the process. \n');

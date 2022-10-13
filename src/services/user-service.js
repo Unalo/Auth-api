@@ -12,20 +12,16 @@ module.exports = user_service => {
     }
 
     const find_user = async id => {
-    console.log(id);
-     let user = await db.oneOrNone('SELECT username FROM USERS WHERE id = $1', [id]);
-     console.log(user );  
-     return user ? true : false 
-    } 
+        let user = await db.oneOrNone('SELECT username FROM USERS WHERE id = $1', [id]);
+        return user ? true : false
+    }
 
     const find_id = async user => {
         let user_id = await db.one('SELECT id FROM USERS WHERE username = $1', [user]);
-        // console.log(user_id.id);
         return user_id.id
     }
 
     const find_password = async user => {
-        console.log(user + " username");
         let user_password = await db.one('SELECT password FROM USERS WHERE username = $1', [user]);
         return user_password.password
     }
@@ -47,4 +43,3 @@ module.exports = user_service => {
     }
 
 }
- // export { find_username, find_id, find_password, update_user, create_user, find_token }
