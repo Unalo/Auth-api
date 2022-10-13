@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
     const cookies = req.cookies;
     console.log('Cookies: ', cookies);
 
-    if (!cookies?.jwt) return res.status(401).json({ 'message': 'Please provide refresh token.' });
+    if (!cookies) return res.status(401).json({ 'message': 'Please provide refresh token.' });
     const refresh_token = cookies.jwt;
 
     const found_user = await User.find({ refresh_token })
