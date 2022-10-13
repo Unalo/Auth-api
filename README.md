@@ -1,4 +1,4 @@
-# Users API
+<!-- # Users API
 This API allows you to sign up a new user and signin using jwt security.
 
 ## Get started
@@ -22,4 +22,4 @@ npm test
 And finally to run the API please run the command below:
 ```
 npm start
-```
+``` -->
